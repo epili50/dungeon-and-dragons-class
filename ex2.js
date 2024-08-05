@@ -33,12 +33,23 @@ class Warrior extends Character {
     // Método exclusivo para el guerrero: strongAttack
     strongAttack() {
         // COMPLETAR
+        let randomNum = Math.floor(Math.random() * (this.attackPower + 1))
+        return randomNum * 2
     }
 }
 
 // Definición de la subclase Healer
 class Healer extends Character {
    // COMPLETAR : constructor y método heal
+   constructor(name, attackPower, intelligence, hitPoints){
+    super(name, attackPower, intelligence +1, hitPoints);
+   }
+
+   heal(){
+    let randomNum = Math.floor(Math.random() * (this.intelligence + 1))
+    return randomNum *2
+   }
+    
 }
 
 // Creación de un guerrero y un curandero

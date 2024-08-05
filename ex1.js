@@ -10,17 +10,24 @@ class Character {
     // Método para subir de nivel
     levelUp() {
         // COMPLETAR
+        this.level++
     }
 
     // Método para recibir daño
     receiveDamage(damage) {
         // COMPLETAR
+        this.hitPoints -= damage;
+        
 
     }
 
     // Método para verificar si el personaje está vivo
     isAlive() {
         // COMPLETAR
+        if(this.hitPoints > 0){
+            return true
+        }
+        return false
     }
 }
 // Creación de una instancia de Character para probar la clase
@@ -40,6 +47,7 @@ console.log(`Nivel: ${hero.level}`);           // Nivel: 1
 // El personaje se pone a luchar contra un goblin
 const goblin = new Character("Gollum", 1, 1, 5);
 hero.receiveDamage(goblin.attackPower);
+
 
 console.log(`Puntos de vida: ${hero.hitPoints}`);   // Puntos de vida: 9
 console.log(`Sigue con vida nuestro héore? ${hero.isAlive()}`); // true
